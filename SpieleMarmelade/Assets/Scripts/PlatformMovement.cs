@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows.Speech;
 
 public class PlatformMovement : MonoBehaviour
 {
@@ -44,12 +45,12 @@ public class PlatformMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         other.transform.SetParent(transform);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         other.transform.SetParent(null);
     }
