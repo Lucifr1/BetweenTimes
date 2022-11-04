@@ -51,13 +51,13 @@ public class PlayerController : MonoBehaviour
 
     private void JumpPerformed(InputAction.CallbackContext context)
     {
-        rig.AddForce(Vector2.up * 1500f, ForceMode2D.Impulse);
+        rig.AddForce(Vector2.up * 150f, ForceMode2D.Impulse);
         //rig.velocity.y = 
         Debug.Log("Werde ich jemals aufgerufen?");
     }
 
     private void Jump()
     {
-        rig.AddForce(Vector2.up * 1500f, ForceMode2D.Impulse);
+        rig.AddForce(Vector2.up * 150f, ForceMode2D.Impulse);
     }
 }

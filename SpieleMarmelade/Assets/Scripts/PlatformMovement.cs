@@ -6,12 +6,12 @@ using UnityEngine.Windows.Speech;
 
 public class PlatformMovement : MonoBehaviour
 {
-    [SerializeField] private Vector3 firstPosition;
-    [SerializeField] private Vector3 secondPosition;
+    [SerializeField] private Vector2 firstPosition;
+    [SerializeField] private Vector2 secondPosition;
     [SerializeField] private int speed;
     private bool hasReachedFirst = false;
     private bool hasReachedSecond = true;
-    private Vector3 startPosition = Vector3.zero;
+    private Vector2 startPosition = Vector2.zero;
     private void Awake()
     {
         startPosition = transform.position;
@@ -21,9 +21,9 @@ public class PlatformMovement : MonoBehaviour
     {
         if (!hasReachedFirst)
         {
-            if (Vector3.Distance(firstPosition, transform.position) != 0)
+            if (Vector2.Distance(firstPosition, transform.position) != 0)
             {
-                transform.position = Vector3.MoveTowards(transform.position, firstPosition, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, firstPosition, speed * Time.deltaTime);
             }
             else
             {
@@ -33,9 +33,9 @@ public class PlatformMovement : MonoBehaviour
         }
         else if (!hasReachedSecond)
         {
-            if (Vector3.Distance(secondPosition, transform.position) != 0)
+            if (Vector2.Distance(secondPosition, transform.position) != 0)
             {
-                transform.position = Vector3.MoveTowards(transform.position, secondPosition, speed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, secondPosition, speed * Time.deltaTime);
             }
             else
             {
