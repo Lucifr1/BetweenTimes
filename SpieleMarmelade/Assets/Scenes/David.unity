@@ -11852,6 +11852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac5f1fe1d7ccf4418fc024027b75926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CooldownTime: 0
   pastLevel: {fileID: 1598845805}
   futureLevel: {fileID: 459676803}
   pastMusic: {fileID: 215576041}
@@ -11879,6 +11880,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1177262559, guid: 8aa368da0c50a3c419a4591ea2564911, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177262559, guid: 8aa368da0c50a3c419a4591ea2564911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177262559, guid: 8aa368da0c50a3c419a4591ea2564911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2623046794637742421, guid: 8aa368da0c50a3c419a4591ea2564911, type: 3}
       propertyPath: m_Name
       value: Player
