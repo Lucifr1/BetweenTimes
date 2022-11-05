@@ -6,8 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
-    [SerializeField]
     private Transform GroundCheck;
     [SerializeField]
     private LayerMask GroundLayer;
@@ -15,15 +13,17 @@ public class PlayerController : MonoBehaviour
     private float movementSmoothing = .05f;
     [SerializeField]
     private float jumpForce = 400f;
+    [SerializeField]
+    private Animator animator;
+
     private Rigidbody2D rig;
 
     const float groundedRadius = .2f;
 
     private Vector3 velocity = Vector3.zero;
 
-    float horizontalMove = 0f;
-    bool jump = false;
     bool grounded = false;
+    bool facingLeft = true;
 
 
     void Start()
@@ -43,8 +43,12 @@ public class PlayerController : MonoBehaviour
         for(int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].gameObject != gameObject)
+            {
                 grounded = true;
+            }
+
         }
+        animator.SetBool("grounded", grounded);
     }
 
     public void Move(float move, bool jump)
@@ -53,14 +57,33 @@ public class PlayerController : MonoBehaviour
             Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
             rig.velocity = Vector3.SmoothDamp(rig.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-            //TODO: player sprite flip
+            
+
+            if(move > 0 && facingLeft)
+            {
+                Flip();
+            }
+            else if(move < 0 && !facingLeft)
+            {
+                Flip();
+            }
         
 
         if(grounded && jump)
         {
             Debug.Log("Du hast Jump gedrückt");
             grounded = false;
+            animator.SetBool("grounded", grounded);
             rig.AddForce(new Vector2(0f, jumpForce));
         }
+    }
+
+    private void Flip()
+    {
+        facingLeft = !facingLeft;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }

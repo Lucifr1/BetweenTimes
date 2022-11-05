@@ -6,12 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public PlayerController controller;
-
+	[SerializeField]
+	private Animator animator;
 	public float runSpeed = 40f;
 
 	float horizontalMove = 0f;
 	bool jump = false;
-	bool crouch = false;
 
 	// Update is called once per frame
 	void Update()
@@ -19,10 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
+		animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
 		if (Input.GetButtonDown("Jump"))
 		{
-			
 			jump = true;
+			//animator.SetBool("grounded", !jump);
 		}
 	}
 
@@ -31,5 +33,6 @@ public class PlayerMovement : MonoBehaviour
 		// Move our character
 		controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
 		jump = false;
+		//animator.SetBool("grounded", !jump);
 	}
 }
