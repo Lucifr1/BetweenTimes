@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     bool grounded = false;
-    bool facingLeft = true;
 
 
     void Start()
@@ -59,31 +58,21 @@ public class PlayerController : MonoBehaviour
 
             
 
-            if(move > 0 && facingLeft)
+            if(move > 0)
             {
-                Flip();
+                GetComponent<SpriteRenderer>().flipX = false;
             }
-            else if(move < 0 && !facingLeft)
+            else if(move < 0)
             {
-                Flip();
+                GetComponent<SpriteRenderer>().flipX = true;
             }
-        
 
-        if(grounded && jump)
+
+        if (grounded && jump)
         {
-            Debug.Log("Du hast Jump gedrückt");
             grounded = false;
             animator.SetBool("grounded", grounded);
             rig.AddForce(new Vector2(0f, jumpForce));
         }
-    }
-
-    private void Flip()
-    {
-        facingLeft = !facingLeft;
-
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
     }
 }

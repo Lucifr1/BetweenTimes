@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: c1d2f87cf07da2b4d9c8d0227fb00dcc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 130
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27f6246048cf3e479e01c75b2066e13
+      internalID: -563073733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 130
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea4b9c23baba2144a3e1a9ca387f94a
+      internalID: 1284959803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 131
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872831d06995e8646a3b3fd020ae6b54
+      internalID: -1858275502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 131
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fe2f06d731961f4cbb2976ec780defc
+      internalID: -532208931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 98
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611298c1c5bf73047a73d07f2c1903c8
+      internalID: -2012139365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 100
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9b43c90c5b36804580d1bcfb31baf24
+      internalID: 1259269109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 101
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30578d02add85c84fa8fa85a3f2f02f5
+      internalID: 532779277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 100
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2df4edcc8e6bfe49859a49c71140290
+      internalID: 944638049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 97
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a24c54380e9b74f898677a3a6f3191
+      internalID: 555670874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 101
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35706febdd328764e9480ccc504c452d
+      internalID: 1769446089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 102
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ad3b15b9f6b9a4bad2a273718049f7
+      internalID: 2039189707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 101
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74591a16c5554e442ba9353782eac9e0
+      internalID: 1490429501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 67
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d9a4fb3ad6d634d8a793bc59f86f86
+      internalID: 1138831232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 67
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6233e05499b19a941b436e9b6999ed65
+      internalID: -688859548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 67
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dde106f32bb89544b6cd978b6d673be
+      internalID: 1726307012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 67
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ed08e970d8c0944acb64b604766c3d
+      internalID: -520444835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 67
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331e3ee34e3f95044aac72e60448fab5
+      internalID: 1349561111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 34
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a713b3991a6c1b44abf3d704214cbcdf
+      internalID: -997948549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 33
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baba36403fd5edb438b22d7fb6051e3d
+      internalID: 339777544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 34
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422da77446a4f394293afd787dcf6b8a
+      internalID: 1817018157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 2
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36bf719aded2ac543b99998c925dbe2f
+      internalID: -113953484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 1
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6d6a3f49b1a3c40af385a493e1385b
+      internalID: -389010074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 1
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5892792d8207c54ab98e2d6aa98472e
+      internalID: -1520422042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9125bb26a6be642bbf729bff3dfdd9
+      internalID: -2123911588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea0ad14112c56147a9e45b82a9d6f0c
+      internalID: -2067492625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 3
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15705b1804884742b97c11aa7feae4f
+      internalID: -1625940481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Space_Cadet_Sprite_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 3
+        width: 36
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bef4a227b989974986473f98bddf954
+      internalID: -1681714060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Space_Cadet_Sprite_Sheet_1: 1284959803
+      Space_Cadet_Sprite_Sheet_17: -997948549
+      Space_Cadet_Sprite_Sheet_7: 944638049
+      Space_Cadet_Sprite_Sheet_12: 1138831232
+      Space_Cadet_Sprite_Sheet_0: -563073733
+      Space_Cadet_Sprite_Sheet_22: -1520422042
+      Space_Cadet_Sprite_Sheet_2: -1858275502
+      Space_Cadet_Sprite_Sheet_19: 1817018157
+      Space_Cadet_Sprite_Sheet_23: -2123911588
+      Space_Cadet_Sprite_Sheet_5: 1259269109
+      Space_Cadet_Sprite_Sheet_18: 339777544
+      Space_Cadet_Sprite_Sheet_8: 555670874
+      Space_Cadet_Sprite_Sheet_25: -1625940481
+      Space_Cadet_Sprite_Sheet_15: -520444835
+      Space_Cadet_Sprite_Sheet_24: -2067492625
+      Space_Cadet_Sprite_Sheet_16: 1349561111
+      Space_Cadet_Sprite_Sheet_10: 2039189707
+      Space_Cadet_Sprite_Sheet_11: 1490429501
+      Space_Cadet_Sprite_Sheet_20: -113953484
+      Space_Cadet_Sprite_Sheet_9: 1769446089
+      Space_Cadet_Sprite_Sheet_3: -532208931
+      Space_Cadet_Sprite_Sheet_4: -2012139365
+      Space_Cadet_Sprite_Sheet_26: -1681714060
+      Space_Cadet_Sprite_Sheet_13: -688859548
+      Space_Cadet_Sprite_Sheet_14: 1726307012
+      Space_Cadet_Sprite_Sheet_21: -389010074
+      Space_Cadet_Sprite_Sheet_6: 532779277
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
