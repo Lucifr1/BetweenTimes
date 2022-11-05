@@ -7,57 +7,61 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float speed;
-    private PlayerActions playerActions;
+    [SerializeField]
+    private Transform GroundCheck;
+    [SerializeField]
+    private LayerMask GroundLayer;
+    [SerializeField]
+    private float movementSmoothing = .05f;
+    [SerializeField]
+    private float jumpForce = 400f;
     private Rigidbody2D rig;
-    private Vector2 moveInput;
+
+    const float groundedRadius = .2f;
+
+    private Vector3 velocity = Vector3.zero;
+
+    float horizontalMove = 0f;
+    bool jump = false;
+    bool grounded = false;
 
 
-    // Start is called before the first frame update
     void Start()
     {
-        //playerActions.Player_Map.Jump.performed += JumpPerformed;
-    }
-
-    private void Awake()
-    {
-        playerActions = new PlayerActions();
         rig = GetComponent<Rigidbody2D>();
         if (rig is null)
             Debug.LogError("Kein Rigidbody du Idiot");
-
-  
     }
 
-    private void OnEnable()
-    {
-        playerActions.Player_Map.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerActions.Player_Map.Disable();
-    }
 
     private void FixedUpdate()
     {
-        moveInput = playerActions.Player_Map.Movement.ReadValue<Vector2>();
-        moveInput.y = 0;
-        rig.velocity = moveInput * speed;
-        if (playerActions.Player_Map.Jump.triggered)
+        grounded = false;
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(GroundCheck.position, groundedRadius, GroundLayer);
+        
+        for(int i = 0; i < colliders.Length; i++)
         {
-            Jump();
+            if (colliders[i].gameObject != gameObject)
+                grounded = true;
         }
     }
 
-    private void JumpPerformed(InputAction.CallbackContext context)
+    public void Move(float move, bool jump)
     {
-        rig.AddForce(Vector2.up * 150f, ForceMode2D.Impulse);
-        //rig.velocity.y = 
-        Debug.Log("Werde ich jemals aufgerufen?");
-    }
+        if (grounded)
+        {
+            Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
+            rig.velocity = Vector3.SmoothDamp(rig.velocity, targetVelocity, ref velocity, movementSmoothing);
 
-    private void Jump()
-    {
-        rig.AddForce(Vector2.up * 150f, ForceMode2D.Impulse);
+            //TODO: player sprite flip
+        }
+
+        if(grounded && jump)
+        {
+            Debug.Log("Du hast Jump gedrückt");
+            grounded = false;
+            rig.AddForce(new Vector2(2f, jumpForce));
+        }
     }
 }
