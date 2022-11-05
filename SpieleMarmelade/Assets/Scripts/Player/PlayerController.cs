@@ -24,12 +24,20 @@ public class PlayerController : MonoBehaviour
 
     bool grounded = false;
 
+    private GameObject Camera;
+
+    bool death = false;
+
+    private Vector3 deathPos;
+
 
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         if (rig is null)
             Debug.LogError("Kein Rigidbody du Idiot");
+
+        Camera = GameObject.Find("Main Camera");
     }
 
 
@@ -45,9 +53,21 @@ public class PlayerController : MonoBehaviour
             {
                 grounded = true;
             }
+            if (colliders[i].gameObject.tag == "death")
+            {
+                Debug.Log("Servus");
+                death = true;
+                deathPos = transform.position;
+            }
 
         }
         animator.SetBool("grounded", grounded);
+
+        if (death)
+        {
+            Camera.transform.position = deathPos;
+        }
+
     }
 
     public void Move(float move, bool jump)
