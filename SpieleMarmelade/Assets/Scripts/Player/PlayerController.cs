@@ -67,17 +67,13 @@ public class PlayerController : MonoBehaviour
         {
             Camera.transform.position = deathPos;
         }
-
     }
 
     public void Move(float move, bool jump)
     {
-        
-            Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
+        Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
             rig.velocity = Vector3.SmoothDamp(rig.velocity, targetVelocity, ref velocity, movementSmoothing);
-
             
-
             if(move > 0)
             {
                 GetComponent<SpriteRenderer>().flipX = false;
@@ -86,8 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 GetComponent<SpriteRenderer>().flipX = true;
             }
-
-
+            
         if (grounded && jump)
         {
             grounded = false;

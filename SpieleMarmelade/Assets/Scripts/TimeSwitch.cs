@@ -39,7 +39,7 @@ public class TimeSwitch : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             SwitchTimeState();
         }

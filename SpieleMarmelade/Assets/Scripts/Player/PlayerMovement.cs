@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
 	public PlayerController controller;
 	[SerializeField]
 	private Animator animator;
@@ -12,11 +11,9 @@ public class PlayerMovement : MonoBehaviour
 
 	float horizontalMove = 0f;
 	bool jump = false;
-
-	// Update is called once per frame
+	
 	void Update()
 	{
-
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
 		animator.SetFloat("speed", Mathf.Abs(horizontalMove));
