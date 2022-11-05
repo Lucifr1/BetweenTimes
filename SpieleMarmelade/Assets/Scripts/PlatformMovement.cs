@@ -6,7 +6,7 @@ using UnityEngine.Windows.Speech;
 
 public class PlatformMovement : MonoBehaviour
 {
-    [SerializeField] private Vector2 firstPosition;
+    private Vector2 firstPosition;
     [SerializeField] private Vector2 secondPosition;
     [SerializeField] private int speed;
     private bool hasReachedFirst = false;
@@ -15,6 +15,7 @@ public class PlatformMovement : MonoBehaviour
     private void Awake()
     {
         startPosition = transform.position;
+        firstPosition = startPosition;
     }
 
     private void FixedUpdate()
