@@ -30,7 +30,7 @@ public class TimeSwitch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             SwitchTimeState();
         }
