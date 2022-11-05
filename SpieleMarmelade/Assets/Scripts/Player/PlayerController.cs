@@ -49,19 +49,18 @@ public class PlayerController : MonoBehaviour
 
     public void Move(float move, bool jump)
     {
-        if (grounded)
-        {
+        
             Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
             rig.velocity = Vector3.SmoothDamp(rig.velocity, targetVelocity, ref velocity, movementSmoothing);
 
             //TODO: player sprite flip
-        }
+        
 
         if(grounded && jump)
         {
             Debug.Log("Du hast Jump gedrückt");
             grounded = false;
-            rig.AddForce(new Vector2(2f, jumpForce));
+            rig.AddForce(new Vector2(0f, jumpForce));
         }
     }
 }
