@@ -2228,7 +2228,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -2257,7 +2257,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -2269,7 +2269,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
@@ -2281,7 +2281,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -17802,8 +17802,8 @@ TextureImporter:
       env_rock_565: 21301130
       env_rock_381: 21300762
       env_rock_73: 21300146
-      env_rock_356: 21300712
       env_rock_438: 21300876
+      env_rock_356: 21300712
       env_rock_77: 21300154
       env_rock_128: 21300256
       env_rock_562: 21301124
@@ -17917,11 +17917,11 @@ TextureImporter:
       env_rock_468: 21300936
       env_rock_457: 21300914
       env_rock_173: 21300346
-      env_rock_630: 21301260
       env_rock_201: 21300402
+      env_rock_630: 21301260
+      env_rock_514: 21301028
       env_rock_449: 21300898
       env_rock_366: 21300732
-      env_rock_514: 21301028
       env_rock_348: 21300696
       env_rock_78: 21300156
       env_rock_259: 21300518

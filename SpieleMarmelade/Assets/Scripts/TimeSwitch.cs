@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class TimeSwitch : MonoBehaviour
 {
+    [SerializeField] private float CooldownTime;
+    private float currentCooldownTime;
+    
     [SerializeField] GameObject pastLevel;
     [SerializeField] GameObject futureLevel;
 
@@ -16,8 +20,6 @@ public class TimeSwitch : MonoBehaviour
     private AudioSource futureMusicAudioSource;
     [SerializeField] private GameObject transitionSound;
 
-    private PlayerSwitchCheck playerSwitchCheck;
-
     private enum TimeState {past, future};
     private TimeState timeState;
 
@@ -25,19 +27,26 @@ public class TimeSwitch : MonoBehaviour
     {
         pastMusicAudioSource = pastMusic.GetComponent<AudioSource>();
         futureMusicAudioSource = futureMusic.GetComponent<AudioSource>();
-        playerSwitchCheck = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSwitchCheck>();
     }
 
     private void Update()
     {
+        if (currentCooldownTime > 0)
+        {
+            currentCooldownTime -= Time.deltaTime;
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.K))
         {
             SwitchTimeState();
         }
     }
 
-    private void SwitchTimeState()
+    public void SwitchTimeState()
     {
+        currentCooldownTime = CooldownTime;
+        
         switch (timeState)
         {
             case TimeState.past:
@@ -51,11 +60,6 @@ public class TimeSwitch : MonoBehaviour
                 transitionSound.SetActive(true);
                 
                 timeState = TimeState.future;
-
-                if (playerSwitchCheck.isColliding("future"))
-                {
-                    SwitchTimeState();
-                }
                 break;
             
             case TimeState.future:
@@ -69,11 +73,6 @@ public class TimeSwitch : MonoBehaviour
                 transitionSound.SetActive(true);
                 
                 timeState = TimeState.past;
-                
-                if (playerSwitchCheck.isColliding("past"))
-                {
-                    SwitchTimeState();
-                }
                 break;
         }
     }

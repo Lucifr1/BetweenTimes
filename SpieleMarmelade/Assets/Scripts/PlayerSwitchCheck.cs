@@ -6,42 +6,15 @@ using UnityEngine;
 
 public class PlayerSwitchCheck : MonoBehaviour
 {
-    private GameObject player;
-    [SerializeField] private LayerMask futureLayerMask;
-    [SerializeField] private LayerMask pastLayerMask;
+    private TimeSwitch timeSwitch;
     
     void Start()
     {
-        player = gameObject;
+        timeSwitch = GameObject.Find("TimeStateController").GetComponent<TimeSwitch>();
     }
-
-    public bool isColliding(String switchedToLevel)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        //Future
-        if (switchedToLevel == "future")
-        {
-            if (!(Physics.OverlapSphere(player.transform.position, 0.5f, futureLayerMask) == null))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        
-        //Past
-        if (switchedToLevel == "past")
-        {
-            if (!(Physics.OverlapSphere(player.transform.position, 0.5f, pastLayerMask) == null))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return false;
+        timeSwitch.SwitchTimeState();
     }
 }
