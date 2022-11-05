@@ -20,6 +20,8 @@ public class TimeSwitch : MonoBehaviour
     private AudioSource futureMusicAudioSource;
     [SerializeField] private GameObject transitionSound;
 
+    [SerializeField] private Animator animator;
+
     private enum TimeState {past, future};
     private TimeState timeState;
 
@@ -59,6 +61,9 @@ public class TimeSwitch : MonoBehaviour
                 transitionSound.SetActive(false);
                 transitionSound.SetActive(true);
                 
+                Debug.Log("halli hallo sind wir hier? uwu");
+                //animator.SetBool("pastTime", false);
+
                 timeState = TimeState.future;
                 break;
             
@@ -71,6 +76,8 @@ public class TimeSwitch : MonoBehaviour
                 StartCoroutine(MusicTransition(futureMusicAudioSource, pastMusicAudioSource));
                 transitionSound.SetActive(false);
                 transitionSound.SetActive(true);
+                
+                //animator.SetBool("pastTime", true);
                 
                 timeState = TimeState.past;
                 break;
