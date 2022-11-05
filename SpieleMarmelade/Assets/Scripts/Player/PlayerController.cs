@@ -23,7 +23,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     bool grounded = false;
-    bool facingLeft = true;
+
+    private GameObject Camera;
+
+    bool death = false;
+
+    private Vector3 deathPos;
 
 
     void Start()
@@ -31,6 +36,8 @@ public class PlayerController : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         if (rig is null)
             Debug.LogError("Kein Rigidbody du Idiot");
+
+        Camera = GameObject.Find("Main Camera");
     }
 
 
@@ -46,44 +53,41 @@ public class PlayerController : MonoBehaviour
             {
                 grounded = true;
             }
+            if (colliders[i].gameObject.tag == "death")
+            {
+                Debug.Log("Servus");
+                death = true;
+                deathPos = transform.position;
+            }
 
         }
         animator.SetBool("grounded", grounded);
+
+        if (death)
+        {
+            Camera.transform.position = deathPos;
+        }
     }
 
     public void Move(float move, bool jump)
     {
-        
-            Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
+        Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
             rig.velocity = Vector3.SmoothDamp(rig.velocity, targetVelocity, ref velocity, movementSmoothing);
-
             
-
-            if(move > 0 && facingLeft)
+            if(move > 0)
             {
-                Flip();
+                GetComponent<SpriteRenderer>().flipX = false;
             }
-            else if(move < 0 && !facingLeft)
+            else if(move < 0)
             {
-                Flip();
+                GetComponent<SpriteRenderer>().flipX = true;
             }
-        
-
-        if(grounded && jump)
+            
+        if (grounded && jump)
         {
-            Debug.Log("Du hast Jump gedrückt");
             grounded = false;
             animator.SetBool("grounded", grounded);
             rig.AddForce(new Vector2(0f, jumpForce));
         }
-    }
-
-    private void Flip()
-    {
-        facingLeft = !facingLeft;
-
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
     }
 }
