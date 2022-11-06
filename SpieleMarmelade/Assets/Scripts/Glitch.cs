@@ -17,19 +17,19 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class DesaturateController : MonoBehaviour
+public class Glitch : MonoBehaviour
 {
 
     [SerializeField] private Renderer2DData rendererData = null;
     [SerializeField] private string featureName = null;
 
-    private void Update()
+   /* private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartTransition();
+            StartGlitch();
         }
-    }
+    }*/
 
 
     private bool TryGetFeature(out ScriptableRendererFeature feature)
@@ -38,12 +38,21 @@ public class DesaturateController : MonoBehaviour
         return feature != null;
     }
 
-    private void StartTransition()
+    public void StartGlitch()
     {
         if(TryGetFeature(out var feature))
         {
-            feature.SetActive(false);
+            feature.SetActive(true);
+            Invoke("EndGlitch", 0.1f);
         }
 
+    }
+
+    public void EndGlitch()
+    {
+        if (TryGetFeature(out var feature))
+        {
+            feature.SetActive(false);
+        }
     }
 }
