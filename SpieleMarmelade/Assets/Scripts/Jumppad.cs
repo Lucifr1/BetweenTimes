@@ -7,6 +7,8 @@ public class Jumppad : MonoBehaviour
 {
    [SerializeField] private float jumppadPower;
    private Animator jumppad;
+   
+   [SerializeField] private AudioSource _audioSource;
 
    private void Start()
    {
@@ -18,6 +20,7 @@ public class Jumppad : MonoBehaviour
       jumppad.SetBool("boosting", true);
       other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
       StartCoroutine(loadingBoost());
+      _audioSource.Play();
       other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumppadPower, ForceMode2D.Impulse);
    }
 
