@@ -19,10 +19,12 @@ public class MapFlicker : MonoBehaviour
         while (flickerCooldown > 0)
         {
             flickerCooldown -= Time.deltaTime;
+            Debug.Log(flickerCooldown);
         }
-        while (flickerOffCooldown > 0)
+        while (flickerOffCooldown > 0 && flickerCooldown <= 0)
         {
             flickerOffCooldown -= Time.deltaTime;
+            Debug.Log("Inactive Time");
         }
 
         if (flickerCooldown < .1f)
@@ -32,7 +34,7 @@ public class MapFlicker : MonoBehaviour
             flickerOffCooldown = .2f;
         }
 
-        if (flickerOffCooldown < .1f)
+        if (flickerOffCooldown <= 0)
         {
             Debug.Log("Inactive");
             container.SetActive(false);

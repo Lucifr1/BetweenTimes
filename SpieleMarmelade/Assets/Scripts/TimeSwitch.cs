@@ -16,6 +16,8 @@ public class TimeSwitch : MonoBehaviour
     [SerializeField] GameObject pastLevel;
     [SerializeField] GameObject futureLevel;
 
+    [SerializeField] GameObject flickerLevel;
+
     [Header("SOUNDS")]
     [SerializeField] private GameObject pastMusic;
     [SerializeField] private GameObject futureMusic;
@@ -68,7 +70,10 @@ public class TimeSwitch : MonoBehaviour
                 //Environment
                 pastLevel.SetActive(false);
                 futureLevel.SetActive(true);
-                
+
+                // Flicker
+                StartCoroutine(switchPast());
+
                 //Sounds and Music
                 StartCoroutine(MusicTransition(pastMusicAudioSource, futureMusicAudioSource));
                 
@@ -87,7 +92,10 @@ public class TimeSwitch : MonoBehaviour
                 //Environment
                 pastLevel.SetActive(true);
                 futureLevel.SetActive(false);
-                
+
+                // Flicker
+                StartCoroutine(switchPast());
+
                 //Sounds and Music
                 StartCoroutine(MusicTransition(futureMusicAudioSource, pastMusicAudioSource));
                 
@@ -103,7 +111,15 @@ public class TimeSwitch : MonoBehaviour
                 break;
         }
     }
+    IEnumerator switchPast()
+    {
+        flickerLevel.SetActive(true);
+        Debug.Log("wait");
+        yield return new WaitForSecondsRealtime(.4f);
+        flickerLevel.SetActive(false);
 
+        
+    }
     private IEnumerator MusicTransition(AudioSource current, AudioSource next)
     {
         while (current.volume > 0)

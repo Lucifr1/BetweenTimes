@@ -20,4 +20,9 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    public void CreditsBack()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
