@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178488049231261933}
   - component: {fileID: 561548763357089409}
+  - component: {fileID: 2280589334052246121}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -48,6 +49,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rendererData: {fileID: 11400000, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
   featureName: Blit
+--- !u!114 &2280589334052246121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389081383236167216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb6d03d4f31a60d4fa6179e1ffa6edd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpoint: {x: 0, y: 0, z: 0}
+  player: {fileID: 0}
 --- !u!1 &6109894633251262226
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,13 +108,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CooldownTime: 1
+  animator: {fileID: 0}
+  glitch: {fileID: 0}
   pastLevel: {fileID: 0}
   futureLevel: {fileID: 0}
   pastMusic: {fileID: 0}
   futureMusic: {fileID: 0}
   transitionSound: {fileID: 0}
-  animator: {fileID: 0}
-  glitch: {fileID: 0}
+  timeUIPast: {fileID: 0}
+  timeUIFuture: {fileID: 0}
 --- !u!1 &7084772123070476978
 GameObject:
   m_ObjectHideFlags: 0

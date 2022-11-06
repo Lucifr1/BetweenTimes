@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class PlayerController : MonoBehaviour
     //Death / Respawn
     public bool dead = false;
     public float deathTimer = 0;
+    [SerializeField] public AudioClip[] deathSounds = null;
+    
+    //Audio
+    private AudioSource _audioSource;
+
 
     //Controllers
     private GameObject gameController;
@@ -39,6 +45,7 @@ public class PlayerController : MonoBehaviour
         // Find Controllers
         gameController = GameObject.Find("GameController");
         checkpointController = gameController.GetComponent<CheckpointController>();
+        _audioSource = GameObject.Find("Sound").GetComponent<AudioSource>();
         
         rig = GetComponent<Rigidbody2D>();
         if (rig is null)
@@ -78,16 +85,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    //DEATH
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("death"))
-        {
-            dead = true;
-            deathTimer = 3f;
-        }
-    }
-
+    //Move
     public void Move(float move, bool jump)
     {
         Vector3 targetVelocity = new Vector2(move * 10f, rig.velocity.y);
