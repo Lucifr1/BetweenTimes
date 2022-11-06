@@ -21,6 +21,7 @@ public class TimeSwitch : MonoBehaviour
     [SerializeField] private GameObject transitionSound;
 
     [SerializeField] private Animator animator;
+    public GameObject glitch;
 
     private enum TimeState {past, future};
     private TimeState timeState;
@@ -63,7 +64,7 @@ public class TimeSwitch : MonoBehaviour
                 
                 Debug.Log("halli hallo sind wir hier? uwu");
                 animator.SetBool("pastTime", false);
-
+                glitch.GetComponent<Glitch>().StartGlitch();
                 timeState = TimeState.future;
                 break;
             
@@ -78,7 +79,7 @@ public class TimeSwitch : MonoBehaviour
                 transitionSound.SetActive(true);
                 
                 animator.SetBool("pastTime", true);
-                
+                glitch.GetComponent<Glitch>().StartGlitch();
                 timeState = TimeState.past;
                 break;
         }
