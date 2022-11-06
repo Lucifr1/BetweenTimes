@@ -49,11 +49,13 @@ public class KatapultMechanism : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         inRange = true;
+        gameObject.transform.GetChild(0).GameObject().SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         inRange = false;
+        gameObject.transform.GetChild(0).GameObject().SetActive(false);
     }
 
     private void Update()
