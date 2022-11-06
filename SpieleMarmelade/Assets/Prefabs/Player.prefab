@@ -796,7 +796,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 448
   movementSmoothing: 0.05
-  jumpForce: 600
+  jumpForce: 700
   animator: {fileID: 3217738287066283518}
   dead: 0
 --- !u!114 &3217738287066283517
