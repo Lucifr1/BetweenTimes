@@ -109,12 +109,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CooldownTime: 1
   animator: {fileID: 0}
-  glitch: {fileID: 0}
+  glitch: {fileID: 3389081383236167216}
   pastLevel: {fileID: 0}
   futureLevel: {fileID: 0}
   pastMusic: {fileID: 0}
   futureMusic: {fileID: 0}
-  transitionSound: {fileID: 0}
+  transitionSound: {fileID: 8300000, guid: c87799f1e97fe524dbc409aac8b451ed, type: 3}
   timeUIPast: {fileID: 0}
   timeUIFuture: {fileID: 0}
 --- !u!1 &7084772123070476978

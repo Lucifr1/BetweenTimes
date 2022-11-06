@@ -64,6 +64,7 @@ public class KatapultMechanism : MonoBehaviour
     { 
         //playerController.enabled = false;
        //playerMovement.enabled = false;
+       Debug.Log("Ja auch mal hier");
        catapultflying = true;
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
        playerCatapult.SetFloat("speed", 0);
@@ -76,11 +77,12 @@ public class KatapultMechanism : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Mathf.Abs(player.transform.position.x - zielPosition.x) < 0.1 && activateShoot)
+        /*if (Mathf.Abs(player.transform.position.x - zielPosition.x) < 0.1 && activateShoot)
         {
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             activateShoot = false;
         }
+        else */
         if (activateShoot && (Mathf.Abs(player.transform.position.x - zielPosition.x) > 0.1))
         {
             if (count < 1.0f) {
@@ -88,10 +90,12 @@ public class KatapultMechanism : MonoBehaviour
                 Vector3 m1 = Vector3.Lerp( abschussPosition, centerHelpPosition, count);
                 Vector3 m2 = Vector3.Lerp( centerHelpPosition, zielPosition, count );
                 player.transform.position = Vector3.Lerp(m1, m2, count);
+                Debug.Log(catapultflying);
             }
         }
-        else
+        else if(Mathf.Abs(player.transform.position.x - zielPosition.x) < 0.1)
         {
+            Debug.Log("Ich will hier nicht sein");
             playerCatapult.SetBool("flying", false);
             catapultflying = false;
             activateShoot = false;

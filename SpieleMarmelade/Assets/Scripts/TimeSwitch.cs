@@ -21,9 +21,10 @@ public class TimeSwitch : MonoBehaviour
     [SerializeField] private GameObject futureMusic;
     private AudioSource pastMusicAudioSource;
     private AudioSource futureMusicAudioSource;
-    [SerializeField] private GameObject transitionSound;
 
-    
+    //Transition Sound
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip transitionSound;
 
     [Header("UI")]
     [SerializeField] private GameObject timeUIPast;
@@ -34,6 +35,7 @@ public class TimeSwitch : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GameObject.Find("Sound").GetComponent<AudioSource>();
         pastMusicAudioSource = pastMusic.GetComponent<AudioSource>();
         futureMusicAudioSource = futureMusic.GetComponent<AudioSource>();
     }
@@ -65,8 +67,8 @@ public class TimeSwitch : MonoBehaviour
                 
                 //Sounds and Music
                 StartCoroutine(MusicTransition(pastMusicAudioSource, futureMusicAudioSource));
-                transitionSound.SetActive(false);
-                transitionSound.SetActive(true);
+                
+                audioSource.PlayOneShot(transitionSound);
                 
                 animator.SetBool("pastTime", false);
                 
@@ -84,8 +86,8 @@ public class TimeSwitch : MonoBehaviour
                 
                 //Sounds and Music
                 StartCoroutine(MusicTransition(futureMusicAudioSource, pastMusicAudioSource));
-                transitionSound.SetActive(false);
-                transitionSound.SetActive(true);
+                
+                audioSource.PlayOneShot(transitionSound);
                 
                 animator.SetBool("pastTime", true);
                 
