@@ -10,18 +10,24 @@ public class TimeSwitch : MonoBehaviour
     [SerializeField] private float CooldownTime;
     private float currentCooldownTime;
     
+    [SerializeField] private Animator animator;
+    public GameObject glitch;
+    
     [SerializeField] GameObject pastLevel;
     [SerializeField] GameObject futureLevel;
 
-    [Header("Sounds")]
+    [Header("SOUNDS")]
     [SerializeField] private GameObject pastMusic;
     [SerializeField] private GameObject futureMusic;
     private AudioSource pastMusicAudioSource;
     private AudioSource futureMusicAudioSource;
     [SerializeField] private GameObject transitionSound;
 
-    [SerializeField] private Animator animator;
-    public GameObject glitch;
+    
+
+    [Header("UI")]
+    [SerializeField] private GameObject timeUIPast;
+    [SerializeField] private GameObject timeUIFuture;
 
     private enum TimeState {past, future};
     private TimeState timeState;
@@ -62,9 +68,12 @@ public class TimeSwitch : MonoBehaviour
                 transitionSound.SetActive(false);
                 transitionSound.SetActive(true);
                 
-                Debug.Log("halli hallo sind wir hier? uwu");
                 animator.SetBool("pastTime", false);
+                
                 glitch.GetComponent<Glitch>().StartGlitch();
+                
+                SwitchTimeUIState();
+                
                 timeState = TimeState.future;
                 break;
             
@@ -79,7 +88,11 @@ public class TimeSwitch : MonoBehaviour
                 transitionSound.SetActive(true);
                 
                 animator.SetBool("pastTime", true);
+                
                 glitch.GetComponent<Glitch>().StartGlitch();
+                
+                SwitchTimeUIState();
+                
                 timeState = TimeState.past;
                 break;
         }
@@ -92,6 +105,20 @@ public class TimeSwitch : MonoBehaviour
             current.volume -= 0.001f;
             next.volume += 0.001f;
             yield return new WaitForSeconds(0.01f);
+        }
+    }
+
+    private void SwitchTimeUIState()
+    {
+        if (timeUIPast.activeSelf)
+        {
+            timeUIPast.SetActive(false);
+            timeUIFuture.SetActive(true);
+        }
+        else if (timeUIFuture.activeSelf)
+        {
+            timeUIPast.SetActive(true);
+            timeUIFuture.SetActive(false);
         }
     }
 }

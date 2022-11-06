@@ -1,14 +1,33 @@
 Credits
 
+SPRITES
 
 Sprites for Players, Objects, Environment:
 Various Sprites by Elthen
 https://www.patreon.com/elthen / https://elthen.itch.io
 
-
 Key Sprites
 Gamepad UI / Controller Prompts Pack by greatdocbrown
 https://greatdocbrown.itch.io/gamepad-ui
 
+Futuristic Sprites
+More NES-like Tiles by surt
+https://opengameart.org/content/more-nes-like-tiles
 
-Tileset:
+Medieval Sprites
+Pixel Dark Forest by Szadi Art.
+https://assetstore.unity.com/packages/2d/environments/pixel-dark-forest-136825
+
+
+
+MUSIC AND SOUNDS
+
+FREE Power Music for Awesome Games by Aural Space
+https://assetstore.unity.com/packages/audio/music/electronic/free-power-music-for-awesome-games-166487
+
+Medieval Music Pack Vol.2 by alkakrab
+https://assetstore.unity.com/packages/audio/music/medieval-music-pack-vol-2-233785
+
+transition sound by jeckkech
+https://freesound.org/people/jeckkech/sounds/391662/
+
