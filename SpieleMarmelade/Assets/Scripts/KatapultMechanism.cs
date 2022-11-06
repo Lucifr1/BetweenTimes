@@ -23,11 +23,16 @@ public class KatapultMechanism : MonoBehaviour
     private PlayerController playerController;
     [SerializeField] private Animator catapult;
     private Animator playerCatapult;
+    
+    //Audio
+    private AudioSource audioSource;
+    [SerializeField] AudioClip katapultiert;
 
     private void Start()
     {
         //playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        audioSource = GameObject.Find("Sound").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerCatapult = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 
@@ -64,7 +69,6 @@ public class KatapultMechanism : MonoBehaviour
     { 
         //playerController.enabled = false;
        //playerMovement.enabled = false;
-       Debug.Log("Ja auch mal hier");
        catapultflying = true;
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
        playerCatapult.SetFloat("speed", 0);
@@ -73,6 +77,7 @@ public class KatapultMechanism : MonoBehaviour
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
        playerCatapult.SetBool("flying", true);
        catapult.SetTrigger("shoot");
+       audioSource.PlayOneShot(katapultiert);
        activateShoot = true;
     }
     private void FixedUpdate()
@@ -82,7 +87,7 @@ public class KatapultMechanism : MonoBehaviour
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             activateShoot = false;
         }
-        else */
+        */
         if (activateShoot && (Mathf.Abs(player.transform.position.x - zielPosition.x) > 0.1))
         {
             if (count < 1.0f) {
@@ -95,7 +100,6 @@ public class KatapultMechanism : MonoBehaviour
         }
         else if(Mathf.Abs(player.transform.position.x - zielPosition.x) < 0.1)
         {
-            Debug.Log("Ich will hier nicht sein");
             playerCatapult.SetBool("flying", false);
             catapultflying = false;
             activateShoot = false;

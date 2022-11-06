@@ -33,11 +33,14 @@ public class TimeSwitch : MonoBehaviour
     private enum TimeState {past, future};
     private TimeState timeState;
 
+    private GameObject player;
+
     private void Start()
     {
         audioSource = GameObject.Find("Sound").GetComponent<AudioSource>();
         pastMusicAudioSource = pastMusic.GetComponent<AudioSource>();
         futureMusicAudioSource = futureMusic.GetComponent<AudioSource>();
+        player = GameObject.Find("Player");
     }
 
     private void Update()
@@ -57,6 +60,7 @@ public class TimeSwitch : MonoBehaviour
     public void SwitchTimeState()
     {
         currentCooldownTime = CooldownTime;
+        player.transform.SetParent(null);
         
         switch (timeState)
         {
