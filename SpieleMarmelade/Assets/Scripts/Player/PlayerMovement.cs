@@ -14,15 +14,19 @@ public class PlayerMovement : MonoBehaviour
 	
 	void Update()
 	{
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
-		animator.SetFloat("speed", Mathf.Abs(horizontalMove));
-
-		if (Input.GetButtonDown("Jump"))
+		if (!KatapultMechanism.catapultflying)
 		{
-			jump = true;
-			//animator.SetBool("grounded", !jump);
+			horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+			animator.SetFloat("speed", Mathf.Abs(horizontalMove));
+
+			if (Input.GetButtonDown("Jump"))
+			{
+				jump = true;
+				//animator.SetBool("grounded", !jump);
+			}
 		}
+		
 	}
 
 	void FixedUpdate()

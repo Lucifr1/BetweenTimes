@@ -17,6 +17,7 @@ public class KatapultMechanism : MonoBehaviour
     private float count = 0.0f;
     private bool activateShoot = false;
     private bool inRange = false;
+    public static bool catapultflying;
     private GameObject player;
     private PlayerMovement playerMovement;
     private PlayerController playerController;
@@ -25,8 +26,8 @@ public class KatapultMechanism : MonoBehaviour
 
     private void Start()
     {
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        //playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerCatapult = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 
@@ -61,9 +62,11 @@ public class KatapultMechanism : MonoBehaviour
     }
     IEnumerator KatapultTimer()
     { 
-        playerController.enabled = false;
-       playerMovement.enabled = false;
+        //playerController.enabled = false;
+       //playerMovement.enabled = false;
+       catapultflying = true;
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+       playerCatapult.SetFloat("speed", 0);
        yield return new WaitForSeconds(0.25f);
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -90,10 +93,11 @@ public class KatapultMechanism : MonoBehaviour
         else
         {
             playerCatapult.SetBool("flying", false);
+            catapultflying = false;
             activateShoot = false;
             count = 0f;
-            playerController.enabled = true;
-            playerMovement.enabled = true;
+            //playerController.enabled = true;
+            //playerMovement.enabled = true;
         }
     }
     
