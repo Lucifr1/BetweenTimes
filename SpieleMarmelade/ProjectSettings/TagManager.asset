@@ -46,11 +46,11 @@ TagManager:
   - name: Background
     uniqueID: 2696273847
     locked: 0
-  - name: DetailsBackground
-    uniqueID: 625212281
-    locked: 0
   - name: Collider
     uniqueID: 3120871735
+    locked: 0
+  - name: DetailsBackground
+    uniqueID: 625212281
     locked: 0
   - name: Details
     uniqueID: 2231803691
