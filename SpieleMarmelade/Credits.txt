@@ -1,10 +1,18 @@
-Credits
+CREDITS
+
+
+DEVELOPER
+
+Daniel Gottschalk, David Marcomin, Jan-Erik Theiss, 
+Marie Schramm, Maximilian Rogner, Virender Kumar
+
 
 CODE
 
 Mathematical function to compute a quadratic bezier curve:
 Blogpost by TomTsagk
 https://gamedev.stackexchange.com/questions/157642/moving-a-2d-object-along-circular-arc-between-two-points
+
 
 SPRITES
 
@@ -23,14 +31,6 @@ https://opengameart.org/content/more-nes-like-tiles
 Medieval Sprites
 Pixel Dark Forest by Szadi Art.
 https://assetstore.unity.com/packages/2d/environments/pixel-dark-forest-136825
-
-
-BACKGROUNDS
-
-Medieval:
-https://szadiart.itch.io/background-desert-mountains
-
-
 
 
 MUSIC AND SOUNDS
