@@ -1,5 +1,11 @@
 Credits
 
+CODE
+
+Mathematical function to compute a quadratic bezier curve:
+Blogpost by TomTsagk
+https://gamedev.stackexchange.com/questions/157642/moving-a-2d-object-along-circular-arc-between-two-points
+
 SPRITES
 
 Sprites for Players, Objects, Environment:
