@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2798697816202646861}
   - component: {fileID: 2798697816202646860}
-  - component: {fileID: 2798697816202646862}
   - component: {fileID: 2798697816202646863}
   m_Layer: 0
   m_Name: Barrel
@@ -61,19 +60,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.8306704, y: 1.6428671}
   m_EdgeRadius: 0
---- !u!114 &2798697816202646862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2798697816202646851}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4b74c233b096a742a55bad0691a2f1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!50 &2798697816202646863
 Rigidbody2D:
   serializedVersion: 4
