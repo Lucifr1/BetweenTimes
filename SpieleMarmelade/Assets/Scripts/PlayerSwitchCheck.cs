@@ -7,9 +7,14 @@ using UnityEngine;
 public class PlayerSwitchCheck : MonoBehaviour
 {
     private TimeSwitch timeSwitch;
+    private AudioSource audioSource;
+    
+    [SerializeField]
+    private AudioClip clip;
     
     void Start()
     {
+        audioSource = GameObject.Find("Sound").GetComponent<AudioSource>();
         timeSwitch = GameObject.Find("TimeStateController").GetComponent<TimeSwitch>();
     }
     
@@ -17,7 +22,9 @@ public class PlayerSwitchCheck : MonoBehaviour
     {
         if(other.CompareTag("environment"))
         {
+            audioSource.Stop();
             timeSwitch.SwitchTimeState();
+            audioSource.PlayOneShot(clip);
         }
     }
 }
