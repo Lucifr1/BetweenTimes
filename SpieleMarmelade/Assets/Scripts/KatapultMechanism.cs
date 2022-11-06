@@ -21,12 +21,15 @@ public class KatapultMechanism : MonoBehaviour
     private PlayerMovement playerMovement;
     private PlayerController playerController;
     [SerializeField] private Animator catapult;
+    private Animator playerCatapult;
 
     private void Start()
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerCatapult = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+
     }
 
     private void SetValues()
@@ -63,6 +66,7 @@ public class KatapultMechanism : MonoBehaviour
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
        yield return new WaitForSeconds(0.25f);
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+       playerCatapult.SetBool("flying", true);
        catapult.SetTrigger("shoot");
        activateShoot = true;
     }
@@ -84,6 +88,7 @@ public class KatapultMechanism : MonoBehaviour
         }
         else
         {
+            playerCatapult.SetBool("flying", false);
             activateShoot = false;
             count = 0f;
             playerController.enabled = true;
