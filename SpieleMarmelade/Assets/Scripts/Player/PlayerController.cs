@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,15 +58,12 @@ public class PlayerController : MonoBehaviour
             {
                 grounded = true;
             }
-            if (colliders[i].gameObject.tag == "death")
-            {
-                Debug.Log("Servus");
-                dead = true;
-                deathTimer = 3f;
-            }
-
         }
         
+        animator.SetBool("grounded", grounded);
+        
+        
+        //Respawn
         if (dead)
         {
             if (deathTimer > .1f)
@@ -78,8 +76,16 @@ public class PlayerController : MonoBehaviour
                 checkpointController.LoadCheckpoint();
             }
         }
-        animator.SetBool("grounded", grounded);
-
+    }
+    
+    //DEATH
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("death"))
+        {
+            dead = true;
+            deathTimer = 3f;
+        }
     }
 
     public void Move(float move, bool jump)

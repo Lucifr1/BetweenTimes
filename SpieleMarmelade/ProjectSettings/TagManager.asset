@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - death
+  - environment
   layers:
   - Default
   - TransparentFX

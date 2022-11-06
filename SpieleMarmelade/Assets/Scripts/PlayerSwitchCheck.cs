@@ -15,7 +15,9 @@ public class PlayerSwitchCheck : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("HLP");
-        timeSwitch.SwitchTimeState();
+        if(other.CompareTag("environment"))
+        {
+            timeSwitch.SwitchTimeState();
+        }
     }
 }
