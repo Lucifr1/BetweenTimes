@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(1);
+        KatapultMechanism.catapultflying = false;
     }
 
     public void Exit()
