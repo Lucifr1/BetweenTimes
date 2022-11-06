@@ -26,10 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private GameObject Camera;
 
-    bool death = false;
-
-    private Vector3 deathPos;
-
+    public bool dead = false;
 
     void Start()
     {
@@ -56,17 +53,12 @@ public class PlayerController : MonoBehaviour
             if (colliders[i].gameObject.tag == "death")
             {
                 Debug.Log("Servus");
-                death = true;
-                deathPos = transform.position;
+                dead = true;
             }
 
         }
         animator.SetBool("grounded", grounded);
 
-        if (death)
-        {
-            Camera.transform.position = deathPos;
-        }
     }
 
     public void Move(float move, bool jump)

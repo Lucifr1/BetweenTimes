@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1998705271}
   - component: {fileID: 1065052767585099209}
   m_Layer: 0
-  m_Name: Player_future
+  m_Name: DEPRECATED_Player_future
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
