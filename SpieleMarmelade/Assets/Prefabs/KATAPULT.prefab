@@ -76,6 +76,7 @@ MonoBehaviour:
   zielPosition: {x: 8, y: 0}
   altitude: 12
   catapult: {fileID: 4976366723895147079}
+  katapultiert: {fileID: 8300000, guid: efd15e0572f42de4f9c63fc97c9a04b7, type: 3}
 --- !u!212 &4976366723895147078
 SpriteRenderer:
   m_ObjectHideFlags: 0

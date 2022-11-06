@@ -23,11 +23,16 @@ public class KatapultMechanism : MonoBehaviour
     private PlayerController playerController;
     [SerializeField] private Animator catapult;
     private Animator playerCatapult;
+    
+    //Audio
+    private AudioSource audioSource;
+    [SerializeField] AudioClip katapultiert;
 
     private void Start()
     {
         //playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         //playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        audioSource = GameObject.Find("Sound").GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerCatapult = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
 
@@ -73,6 +78,7 @@ public class KatapultMechanism : MonoBehaviour
        player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
        playerCatapult.SetBool("flying", true);
        catapult.SetTrigger("shoot");
+       audioSource.PlayOneShot(katapultiert);
        activateShoot = true;
     }
     private void FixedUpdate()
