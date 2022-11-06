@@ -12,8 +12,6 @@ public class KatapultMechanism : MonoBehaviour
     private Vector2 abschussPositionAnpassung;
     private Vector2 rotationCenter;
     private Vector2 centerHelpPosition;
-    private float rotationRadius;
-    private float angle = 0f;
     private float posX;
     private float posY;
     private float count = 0.0f;
@@ -22,6 +20,7 @@ public class KatapultMechanism : MonoBehaviour
     private GameObject player;
     private PlayerMovement playerMovement;
     private PlayerController playerController;
+    [SerializeField] private Animator catapult;
 
     private void Start()
     {
@@ -32,11 +31,10 @@ public class KatapultMechanism : MonoBehaviour
 
     private void SetValues()
     {
-        abschussPositionAnpassung = new Vector2(-2f, 1);
+        abschussPositionAnpassung = new Vector2(-1.9f, 0.38f);
         abschussPosition = ((Vector2)transform.position + abschussPositionAnpassung);
         rotationCenter = (zielPosition + abschussPosition)/2;
         centerHelpPosition = rotationCenter + Vector2.up * altitude;
-        rotationRadius = Vector2.Distance(rotationCenter, zielPosition);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -55,12 +53,19 @@ public class KatapultMechanism : MonoBehaviour
         {
             SetValues();
             player.transform.position = abschussPosition;
-            activateShoot = true;
-            playerController.enabled = false;
-            playerMovement.enabled = false;
+            StartCoroutine(KatapultTimer());
         }
     }
-
+    IEnumerator KatapultTimer()
+    { 
+        playerController.enabled = false;
+       playerMovement.enabled = false;
+       player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePosition;
+       yield return new WaitForSeconds(0.25f);
+       player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+       catapult.SetTrigger("shoot");
+       activateShoot = true;
+    }
     private void FixedUpdate()
     {
         if (Mathf.Abs(player.transform.position.x - zielPosition.x) < 0.1 && activateShoot)
@@ -70,10 +75,8 @@ public class KatapultMechanism : MonoBehaviour
         }
         if (activateShoot && (Mathf.Abs(player.transform.position.x - zielPosition.x) > 0.1))
         {
-            Debug.Log("Schaffen wir es hier wenigstens rein?");
             if (count < 1.0f) {
                 count += 1.0f *Time.deltaTime;
-                Debug.Log("Schaffen wir es zweimal rein?");
                 Vector3 m1 = Vector3.Lerp( abschussPosition, centerHelpPosition, count);
                 Vector3 m2 = Vector3.Lerp( centerHelpPosition, zielPosition, count );
                 player.transform.position = Vector3.Lerp(m1, m2, count);
@@ -86,6 +89,7 @@ public class KatapultMechanism : MonoBehaviour
             playerController.enabled = true;
             playerMovement.enabled = true;
         }
-        
     }
+    
+    
 }

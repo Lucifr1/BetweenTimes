@@ -23,18 +23,25 @@ public class PlayerController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     bool grounded = false;
-
-    private GameObject Camera;
-
+    
+    //Death / Respawn
     public bool dead = false;
+    public float deathTimer = 0;
+
+    //Controllers
+    private GameObject gameController;
+    private CheckpointController checkpointController;
+    
 
     void Start()
     {
+        // Find Controllers
+        gameController = GameObject.Find("GameController");
+        checkpointController = gameController.GetComponent<CheckpointController>();
+        
         rig = GetComponent<Rigidbody2D>();
         if (rig is null)
             Debug.LogError("Kein Rigidbody du Idiot");
-
-        Camera = GameObject.Find("Main Camera");
     }
 
 
@@ -54,8 +61,22 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Servus");
                 dead = true;
+                deathTimer = 3f;
             }
 
+        }
+        
+        if (dead)
+        {
+            if (deathTimer > .1f)
+            {
+                deathTimer -= Time.deltaTime;
+            }
+            else
+            {
+                dead = false;
+                checkpointController.LoadCheckpoint();
+            }
         }
         animator.SetBool("grounded", grounded);
 
