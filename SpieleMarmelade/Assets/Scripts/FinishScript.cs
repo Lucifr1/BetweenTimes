@@ -11,6 +11,7 @@ public class FinishScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             KatapultMechanism.catapultflying = true;
+            other.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             image.gameObject.SetActive(true);
         }
     }
