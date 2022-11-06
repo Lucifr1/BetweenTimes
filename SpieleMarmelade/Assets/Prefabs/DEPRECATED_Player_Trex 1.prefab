@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 1998705270}
   - component: {fileID: 1998705271}
   m_Layer: 0
-  m_Name: Player_Trex 1
+  m_Name: DEPRECATED_Player_Trex 1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
